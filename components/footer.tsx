@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Seal } from "./seal";
 import { Container } from "./container";
+import { PATRONAGE_MINT_ADDRESS, shortMint } from "@/lib/bags-mints";
 
 export function Footer() {
   return (
@@ -39,11 +40,42 @@ export function Footer() {
       </Container>
       <div className="rule-h" />
       <Container size="wide">
-        <div className="h-12 flex items-center justify-between">
-          <span className="f-label" style={{ color: "var(--ink-faint)" }}>
-            © 2026 Patronage
-          </span>
-          <a href="https://bags.fm" className="f-label" style={{ color: "var(--ink-faint)" }}>
+        <div className="py-4 flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <span className="f-label" style={{ color: "var(--ink-faint)" }}>
+              © 2026 Patronage
+            </span>
+            <span
+              className="f-mono text-[11px]"
+              style={{ color: "var(--ink-faint)" }}
+              aria-hidden
+            >
+              ·
+            </span>
+            <Link
+              href={`/t/${PATRONAGE_MINT_ADDRESS}`}
+              className="inline-flex items-center gap-2 f-label hover:text-bags-deep transition-colors"
+              style={{ color: "var(--ink)" }}
+            >
+              <span
+                className="inline-block w-[6px] h-[6px] rounded-full"
+                style={{ background: "var(--bags)" }}
+                aria-hidden
+              />
+              $PATRONAGE
+              <span
+                className="f-mono text-[11px]"
+                style={{ color: "var(--ink-faint)" }}
+              >
+                {shortMint(PATRONAGE_MINT_ADDRESS, 4, 4)}
+              </span>
+            </Link>
+          </div>
+          <a
+            href="https://bags.fm"
+            className="f-label"
+            style={{ color: "var(--ink-faint)" }}
+          >
             Built on Bags
           </a>
         </div>

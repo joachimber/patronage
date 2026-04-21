@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Seal } from "./seal";
 import { Container } from "./container";
+import { PATRONAGE_MINT_ADDRESS } from "@/lib/bags-mints";
 
 export function Nav({
   variant = "public",
@@ -34,6 +35,19 @@ export function Nav({
                   style={{ color: "var(--ink)" }}
                 >
                   Discover
+                </Link>
+                <Link
+                  href={`/t/${PATRONAGE_MINT_ADDRESS}`}
+                  className="f-label hidden sm:inline-flex items-center gap-[6px] hover:text-bags-deep transition-colors"
+                  style={{ color: "var(--ink)" }}
+                  aria-label="View $PATRONAGE token"
+                >
+                  <span
+                    className="inline-block w-[6px] h-[6px] rounded-full"
+                    style={{ background: "var(--bags)" }}
+                    aria-hidden
+                  />
+                  $PATRONAGE
                 </Link>
                 <Link
                   href="/dashboard"

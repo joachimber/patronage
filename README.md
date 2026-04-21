@@ -6,9 +6,9 @@
 
 ## Why
 
-Bags makes it easy to launch a token. What happens *after* the launch is up to the creator — and most fall back to Discord invites and manual role-granting. Patronage is the layer in between: plug your Bags mint in, define a few tiers with thresholds and perks, and the site handles the rest.
+Bags makes it easy to launch a token. After that — nothing. No built-in way to say "if you hold this much of my ticker, you get this file / this page / this channel." Patronage is that missing layer: plug your mint in, define tiers with thresholds and perks, share the link.
 
-Holders connect a wallet, sign a message, and get their tier on the spot. Every time they touch a gated resource, the site re-reads their balance from Solana and adjusts.
+Holders connect a wallet, sign a message (free, no transaction), and get their tier on the spot. Every time they touch a gated resource, the site re-reads their balance from Solana and adjusts. Sell and lose access in the same request.
 
 ## What a creator does
 

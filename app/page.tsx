@@ -4,7 +4,14 @@ import { Footer } from "@/components/footer";
 import { Container } from "@/components/container";
 import { DiscoverGrid, type DiscoverEntry } from "@/components/discover-grid";
 import { TierSimulator } from "@/components/tier-simulator";
-import { BAGS_MINTS, mintTicker, mintName, shortMint, getMintMeta } from "@/lib/bags-mints";
+import {
+  BAGS_MINTS,
+  mintTicker,
+  mintName,
+  shortMint,
+  getMintMeta,
+  PATRONAGE_MINT_ADDRESS,
+} from "@/lib/bags-mints";
 
 export default function Home() {
   return (
@@ -487,14 +494,68 @@ function Mechanic() {
                 billing, no credit card, auditable on Solscan.
               </p>
               <p>
-                Creators who hold enough $PATRONAGE launch with partner BPS set
-                to zero and keep every basis point of their own fee. The
-                utility is encoded in the launch config itself, reversible by a
-                sell.
+                Creators who hold enough{" "}
+                <Link
+                  href={`/t/${PATRONAGE_MINT_ADDRESS}`}
+                  className="underline decoration-[var(--bags)] decoration-2 underline-offset-4 hover:text-bags-deep"
+                  style={{ color: "var(--ink)" }}
+                >
+                  $PATRONAGE
+                </Link>{" "}
+                launch with partner BPS set to zero and keep every basis point
+                of their own fee. The utility is encoded in the launch config
+                itself, reversible by a sell.
               </p>
             </div>
           </div>
-          <aside className="col-span-12 md:col-span-4 md:col-start-9">
+          <aside className="col-span-12 md:col-span-4 md:col-start-9 space-y-4">
+            <div
+              className="p-5 rounded-[var(--radius-md)]"
+              style={{ background: "var(--bags-soft)" }}
+            >
+              <div className="flex items-center gap-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/patronage-token.png"
+                  alt=""
+                  className="w-[48px] h-[48px] rounded-full object-cover shrink-0"
+                  style={{ background: "var(--bone-deep)" }}
+                />
+                <div className="flex-1 min-w-0">
+                  <div
+                    className="f-label"
+                    style={{ color: "var(--bags-deep)" }}
+                  >
+                    Live on Bags
+                  </div>
+                  <div className="f-headline text-[20px] mt-[2px]">
+                    $PATRONAGE
+                  </div>
+                  <div
+                    className="f-mono text-[11px] mt-[2px] truncate"
+                    style={{ color: "var(--ink-soft)" }}
+                  >
+                    {shortMint(PATRONAGE_MINT_ADDRESS, 6, 6)}
+                  </div>
+                </div>
+              </div>
+              <div className="mt-4 flex gap-2">
+                <a
+                  href={`https://bags.fm/${PATRONAGE_MINT_ADDRESS}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-bags flex-1 justify-center"
+                >
+                  Buy on Bags →
+                </a>
+                <Link
+                  href={`/t/${PATRONAGE_MINT_ADDRESS}`}
+                  className="btn btn-ghost flex-1 justify-center"
+                >
+                  View page
+                </Link>
+              </div>
+            </div>
             <div className="card p-6">
               <dl className="divide-y divide-rule">
                 {[

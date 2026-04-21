@@ -4,6 +4,11 @@
  * Each mint gets a Patronage page at /t/[mint] — unclaimed until a wallet that
  * matches the token's fee claimer signs the claim flow.
  */
+
+/** Platform token — used by the partner fee-waiver mechanic and site links. */
+export const PATRONAGE_MINT_ADDRESS =
+  "4oGHFuYTMqHgZX9vmPGytAyZq9mjTG7cRs9Zyp3eBAGS";
+
 export const BAGS_MINTS: readonly string[] = [
   "2APfuDUoCzDDZgDbuNgmx53xDyjBEpG318gh7UfVBAGS",
   "2B5Rs88FYyFp4XciFrJ7zovvEeybiinZA8PXsSptBAGS",
